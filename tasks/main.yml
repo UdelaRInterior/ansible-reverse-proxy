@@ -1,0 +1,6 @@
+---
+# tasks 
+
+- name: config apache
+  include: apache.yml
+  when: reverse_proxy_type == "apache"
