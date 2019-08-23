@@ -6,7 +6,6 @@ reverse_proxy_type: apache #only apache for now
 #apache reverse proxy variables
 apache_server_admin: serveradmin@admin.com
 apache_server_alias: false
-apache_https: false
 apache_ssl_certificate_file: /etc/letsencrypt/live/host/cert.pem
 apache_ssl_certificate_key: /etc/letsencrypt/live/host/privkey.pem
 apache_proxy_pass: http://localhost:9001/

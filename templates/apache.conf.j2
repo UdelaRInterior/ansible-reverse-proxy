@@ -9,7 +9,6 @@
 {% endif %}
 </VirtualHost>
 
-{% if apache_https %}
 <VirtualHost *:443>
 
     SSLEngine on
@@ -19,4 +18,3 @@
     ProxyPassReverse / {{apache_proxy_pass_reverse}}
 
 </VirtualHost>
-{% endif %}
