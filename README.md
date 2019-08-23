@@ -23,13 +23,6 @@ Role Variables
 | apache_proxy_pass  |   |
 | apache_proxy_pass_reverse  |   |
 
-Dependencies
-------------
-
-No dependencies.
-
-Example Playbook
-----------------
 
 License
 -------
