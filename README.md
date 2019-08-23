@@ -18,7 +18,6 @@ Role Variables
 | reverse_proxy_type  | apache  |
 | apache_server_admin  | name of the server admin  |
 | apache_server_alias  |   |
-| apache_https  |   |
 | apache_ssl_certificate_file  |   |
 | apache_ssl_certificate_key  |   |
 | apache_proxy_pass  |   |
