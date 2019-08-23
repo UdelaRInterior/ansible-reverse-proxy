@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Ansible role intended to install and configure a reverse proxy.
+Ansible role intended to install and configure a reverse proxy and redirect the traffic from http to https using apache.
 
 
 Requirements
