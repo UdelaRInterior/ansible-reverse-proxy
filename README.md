@@ -27,7 +27,7 @@ Role Variables
 License
 -------
 
-MIT/BSD
+GPL
 
 Author Information
 ------------------
