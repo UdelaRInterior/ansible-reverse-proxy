@@ -1,2 +1,7 @@
 ---
-# handlers file for reverse_proxy
+
+- name: apache2_restart
+  service:
+    name: apache2
+    enabled: yes
+    state: restarted
