@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Ansible role intended to install and configure a reverse proxy.
+Ansible role intended to install and configure a reverse proxy and redirect the traffic from http to https using apache.
 
 
 Requirements
@@ -18,24 +18,16 @@ Role Variables
 | reverse_proxy_type  | apache  |
 | apache_server_admin  | name of the server admin  |
 | apache_server_alias  |   |
-| apache_https  |   |
 | apache_ssl_certificate_file  |   |
 | apache_ssl_certificate_key  |   |
 | apache_proxy_pass  |   |
 | apache_proxy_pass_reverse  |   |
 
-Dependencies
-------------
-
-No dependencies.
-
-Example Playbook
-----------------
 
 License
 -------
 
-MIT/BSD
+GPL
 
 Author Information
 ------------------
