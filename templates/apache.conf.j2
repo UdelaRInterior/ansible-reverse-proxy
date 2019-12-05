@@ -15,6 +15,13 @@
     SSLCertificateFile {{apache_ssl_certificate_file}}
     SSLCertificateKeyFile {{apache_ssl_certificate_key}}
     SSLCertificateChainFile {{apache_ssl_certificate_fullchain}}
+
+{% if apache_proxy_ssl %}
+    SSLProxyEngine on
+    SSLProxyCheckPeerCN off 
+    SSLProxyCheckPeerExpire off 
+    SSLProxyCheckPeerName off 
+{% endif %}
     ProxyPass / {{apache_proxy_pass}}
     ProxyPassReverse / {{apache_proxy_pass_reverse}}
 
