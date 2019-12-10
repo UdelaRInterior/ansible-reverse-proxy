@@ -9,6 +9,7 @@ apache_server_alias: false
 apache_ssl_certificate_file: /etc/letsencrypt/live/host/cert.pem
 apache_ssl_certificate_key: /etc/letsencrypt/live/host/privkey.pem
 apache_ssl_certificate_fullchain: /etc/letsencrypt/live/host/fullchain.pem
+apache_proxy_home_pass: /
 apache_proxy_pass: http://localhost:9001/
 apache_proxy_pass_reverse: http://localhost:9001/
 apache_proxy_ssl: off  # needs true to proxy an https service

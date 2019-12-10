@@ -22,7 +22,7 @@
     SSLProxyCheckPeerExpire off 
     SSLProxyCheckPeerName off 
 {% endif %}
-    ProxyPass / {{apache_proxy_pass}}
-    ProxyPassReverse / {{apache_proxy_pass_reverse}}
+    ProxyPass {{apache_proxy_home_pass}} {{apache_proxy_pass}}
+    ProxyPassReverse {{apache_proxy_home_pass}} {{apache_proxy_pass_reverse}}
 
 </VirtualHost>

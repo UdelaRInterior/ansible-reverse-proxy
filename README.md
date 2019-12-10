@@ -20,9 +20,9 @@ Role Variables
 | apache_server_alias  |   |
 | apache_ssl_certificate_file  |   |
 | apache_ssl_certificate_key  |   |
+| apache_proxy_home_pass  |   |
 | apache_proxy_pass  |   |
 | apache_proxy_pass_reverse  |   |
-
 
 License
 -------
