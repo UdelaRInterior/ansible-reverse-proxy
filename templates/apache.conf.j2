@@ -11,6 +11,12 @@
 
 <VirtualHost *:443>
 
+{% if '/' in apache_server_alias %}
+    ServerName {{inventory_hostname}}
+    ServerAlias {{apache_server_alias}}
+    Redirect / https://{{apache_server_alias}}
+{% endif %}
+
     SSLEngine on
     SSLCertificateFile {{apache_ssl_certificate_file}}
     SSLCertificateKeyFile {{apache_ssl_certificate_key}}
