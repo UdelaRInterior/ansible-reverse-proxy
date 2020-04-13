@@ -20,10 +20,11 @@
 - name: copy apache config
   template:
     src: apache.conf.j2
-    dest: "/etc/apache2/sites-available/{{inventory_hostname}}.conf"
+    dest: "/etc/apache2/sites-available/{{ item }}.conf"
     owner: root
     group: root
     mode: "0644"
+  with_items: '{{ apache_virtual_host }}'
   notify: 
     - apache2_restart
 
@@ -36,8 +37,9 @@
 
 - name: activate apache site.
   file:
-    path: "/etc/apache2/sites-enabled/{{inventory_hostname}}.conf"
-    src: "/etc/apache2/sites-available/{{inventory_hostname}}.conf"
+    path: "/etc/apache2/sites-enabled/{{ item }}.conf"
+    src: "/etc/apache2/sites-available/{{ item }}.conf"
     state: link
+  with_items: '{{ apache_virtual_host }}'
   notify: 
     - apache2_restart

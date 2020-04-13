@@ -4,6 +4,9 @@
 reverse_proxy_type: apache #only apache for now
 
 #apache reverse proxy variables
+apache_virtual_host:
+  - domain1.com
+  - domain2.edu
 apache_server_admin: serveradmin@admin.com
 apache_server_alias: false
 apache_ssl_certificate_file: /etc/letsencrypt/live/host/cert.pem

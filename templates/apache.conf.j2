@@ -1,18 +1,18 @@
 <VirtualHost *:80>
-        ServerName {{inventory_hostname}}
+        ServerName {{ item }}
         ServerAdmin {{apache_server_admin}}
 {% if apache_server_alias %}
         ServerAlias {{apache_server_alias}}
         Redirect / https://{{apache_server_alias}}
 {% else %}
-        Redirect / https://{{inventory_hostname}}
+        Redirect / https://{{ item }}
 {% endif %}
 </VirtualHost>
 
 <VirtualHost *:443>
 
-{% if '/' in apache_server_alias %}
-    ServerName {{inventory_hostname}}
+{% if apache_server_alias %}
+    ServerName {{ item }}
     ServerAlias {{apache_server_alias}}
     Redirect / https://{{apache_server_alias}}
 {% endif %}
