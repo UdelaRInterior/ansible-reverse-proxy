@@ -20,26 +20,24 @@
 - name: copy apache config
   template:
     src: apache.conf.j2
-    dest: "/etc/apache2/sites-available/{{ item }}.conf"
+    dest: "/etc/apache2/sites-available/{{inventory_hostname}}.conf"
     owner: root
     group: root
     mode: "0644"
-  with_items: '{{ apache_virtual_host }}'
   notify: 
-    - apache2_restart
+    - apache2_reverse_proxy_restart
 
 - name: remove default apache2 site.
   file:
     path: /etc/apache2/sites-enabled/000-default.conf
     state: absent
   notify:
-    - apache2_restart
+    - apache2_reverse_proxy_restart
 
 - name: activate apache site.
   file:
-    path: "/etc/apache2/sites-enabled/{{ item }}.conf"
-    src: "/etc/apache2/sites-available/{{ item }}.conf"
+    path: "/etc/apache2/sites-enabled/{{inventory_hostname}}.conf"
+    src: "/etc/apache2/sites-available/{{inventory_hostname}}.conf"
     state: link
-  with_items: '{{ apache_virtual_host }}'
   notify: 
-    - apache2_restart
+    - apache2_reverse_proxy_restart
