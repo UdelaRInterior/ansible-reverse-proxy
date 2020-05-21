@@ -1,6 +1,6 @@
 ---
 
-- name: apache2_restart
+- name: apache2_reverse_proxy_restart
   service:
     name: apache2
     enabled: yes

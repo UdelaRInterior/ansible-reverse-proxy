@@ -14,12 +14,14 @@ Role Variables
 
 | Name  | Description |
 | ------------- | ------------- |
-| inventory_hostname  | name of the host  |
-| reverse_proxy_type  | apache  |
-| apache_server_admin  | name of the server admin  |
-| apache_server_alias  | alias of the server  |
-| apache_ssl_certificate_file  | location of the ssl cert file  |
-| apache_ssl_certificate_key  | location of the ssl key file   |
+| inventory_hostname   | name of the host  |
+| reverse_proxy_type   | apache  |
+| apache_server_name   | server domain name |
+| apache_server_admin  | server admin email  |
+| apache_server_alias  | list of alternate server names  |
+| apache_redirect_url  | url for Redirect directive  |
+| apache_ssl_certificate_file  | ssl cert file location |
+| apache_ssl_certificate_key  | ssl key file location   |
 | apache_proxy_home_pass  | incoming requests  |
 | apache_proxy_pass  | backend server  |
 | apache_proxy_pass_reverse  | backend server  |

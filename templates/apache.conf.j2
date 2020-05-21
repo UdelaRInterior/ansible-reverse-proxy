@@ -1,34 +1,35 @@
 <VirtualHost *:80>
-        ServerName {{inventory_hostname}}
-        ServerAdmin {{apache_server_admin}}
+   ServerName {{apache_server_name}}
+   ServerAdmin {{apache_server_admin}}
 {% if apache_server_alias %}
-        ServerAlias {{apache_server_alias}}
-        Redirect / https://{{apache_server_alias}}
-{% else %}
-        Redirect / https://{{inventory_hostname}}
+   ServerAlias {{apache_server_alias}}
+{% endif %}
+{% if apache_redirect_url %}
+   Redirect / {{apache_redirect_url}}
 {% endif %}
 </VirtualHost>
 
 <VirtualHost *:443>
-
-{% if '/' in apache_server_alias %}
-    ServerName {{inventory_hostname}}
-    ServerAlias {{apache_server_alias}}
-    Redirect / https://{{apache_server_alias}}
+   ServerName {{apache_server_name}}
+   ServerAdmin {{apache_server_admin}}
+{% if apache_server_alias %}
+   ServerAlias {{apache_server_alias}}
+{% endif %}
+{% if apache_redirect_url %}
+   Redirect / {{apache_redirect_url}}
 {% endif %}
 
-    SSLEngine on
-    SSLCertificateFile {{apache_ssl_certificate_file}}
-    SSLCertificateKeyFile {{apache_ssl_certificate_key}}
-    SSLCertificateChainFile {{apache_ssl_certificate_fullchain}}
+   SSLEngine on
+   SSLCertificateFile {{apache_ssl_certificate_file}}
+   SSLCertificateKeyFile {{apache_ssl_certificate_key}}
+   SSLCertificateChainFile {{apache_ssl_certificate_fullchain}}
 
 {% if apache_proxy_ssl %}
-    SSLProxyEngine on
-    SSLProxyCheckPeerCN off 
-    SSLProxyCheckPeerExpire off 
-    SSLProxyCheckPeerName off 
+   SSLProxyEngine on
+   SSLProxyCheckPeerCN off 
+   SSLProxyCheckPeerExpire off 
+   SSLProxyCheckPeerName off 
 {% endif %}
-    ProxyPass {{apache_proxy_home_pass}} {{apache_proxy_pass}}
-    ProxyPassReverse {{apache_proxy_home_pass}} {{apache_proxy_pass_reverse}}
-
+   ProxyPass {{apache_proxy_home_pass}} {{apache_proxy_pass}}
+   ProxyPassReverse {{apache_proxy_home_pass}} {{apache_proxy_pass_reverse}}
 </VirtualHost>
