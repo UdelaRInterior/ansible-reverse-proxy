@@ -8,6 +8,8 @@ apache_server_name: "{{inventory_hostname}}"
 apache_server_admin: serveradmin@domain.com
 apache_server_alias: false
 apache_redirect_url: false
+apache_vhost80_redirect_url: false
+apache_vhost443_redirect_url: false
 apache_ssl_certificate_file: /etc/letsencrypt/live/{{inventory_hostname}}/cert.pem
 apache_ssl_certificate_key: /etc/letsencrypt/live/{{inventory_hostname}}/privkey.pem
 apache_ssl_certificate_fullchain: /etc/letsencrypt/live/{{inventory_hostname}}/fullchain.pem
