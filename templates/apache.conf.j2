@@ -4,7 +4,9 @@
 {% if apache_server_alias %}
    ServerAlias {{apache_server_alias}}
 {% endif %}
-{% if apache_redirect_url %}
+{% if apache_vhost80_redirect_url %}
+   Redirect / {{apache_vhost80_redirect_url}}
+{% elif apache_redirect_url %}
    Redirect / {{apache_redirect_url}}
 {% endif %}
 </VirtualHost>
@@ -15,7 +17,9 @@
 {% if apache_server_alias %}
    ServerAlias {{apache_server_alias}}
 {% endif %}
-{% if apache_redirect_url %}
+{% if apache_vhost443_redirect_url %}
+   Redirect / {{apache_vhost443_redirect_url}}
+{% elif apache_redirect_url %}
    Redirect / {{apache_redirect_url}}
 {% endif %}
 

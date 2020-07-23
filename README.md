@@ -19,7 +19,9 @@ Role Variables
 | apache_server_name   | server domain name |
 | apache_server_admin  | server admin email  |
 | apache_server_alias  | list of alternate server names  |
-| apache_redirect_url  | url for Redirect directive  |
+| apache_redirect_url  | default url to define a redirect in vhosts  |
+| apache_vhost80_redirect_url  | url to define a redirect in virtualhost *:80  |
+| apache_vhost443_redirect_url  | url to define a redirect in virtualhost *:443  |
 | apache_ssl_certificate_file  | ssl cert file location |
 | apache_ssl_certificate_key  | ssl key file location   |
 | apache_proxy_home_pass  | incoming requests  |
